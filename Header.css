@@ -1,0 +1,154 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Header Styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(34, 45, 65, 0.9); /* Dark Blue Background */
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  width: 100%;
+  height: 70px;
+}
+
+/* Logo and Title Styling */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #00aeef; /* Electric Blue for Techy Feel */
+}
+
+/* Navigation Menu */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  list-style: none;
+}
+
+.nav-link {
+  color: #ffffff; /* White text */
+  text-decoration: none;
+  font-size: 16px;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #00ff44; /* Neon Green Hover Effect */
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.bar {
+  width: 100%;
+  height: 4px;
+  background-color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.bar.open:nth-child(1) {
+  transform: rotate(45deg) translateY(7px);
+}
+
+.bar.open:nth-child(2) {
+  opacity: 0;
+}
+
+.bar.open:nth-child(3) {
+  transform: rotate(-45deg) translateY(-7px);
+}
+
+/* Active State for Menu */
+.nav-links.active {
+  display: block;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  background-color: rgba(34, 45, 65, 0.9);
+  width: 100%;
+  height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-links.active .nav-link {
+  margin: 10px 0;
+}
+
+/* Space after Header */
+body {
+  padding-top: 70px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 20px;
+  }
+
+  .logo-text {
+    font-size: 16px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .logo-container {
+    flex-grow: 1;
+    justify-content: flex-start;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+}
